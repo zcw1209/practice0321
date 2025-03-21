@@ -82,6 +82,10 @@ git branch test(任意寫)
 - git remote -v
 - origin  https://github.com/zcw1209/practice0321.git (fetch)
 
+22.推送到雲端倉庫
+- git push -u origin master
+- git push
+
 ###常用指令
 
 1.git init
