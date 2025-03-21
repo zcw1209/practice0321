@@ -90,6 +90,9 @@ git branch test(任意寫)
 23.複製專案
 - git clone https://github.com/zcw1209/practice0321
 
+24.加入暫存區的恢復 (A -> U)
+- git restore --staged <filename>
+
 ###常用指令
 
 1.git init
