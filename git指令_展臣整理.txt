@@ -76,7 +76,8 @@ git branch test(任意寫)
 - git reset --hard 65f5ae
 
 20.加上雲端倉庫
-
+- git remote add origin https://github.com/zcw1209/practice0321.git
+- git remote add origin1 ''''
 
 21.檢視雲端倉庫url
 - git remote -v
@@ -85,6 +86,9 @@ git branch test(任意寫)
 22.推送到雲端倉庫
 - git push -u origin master
 - git push
+
+23.複製專案
+- git clone https://github.com/zcw1209/practice0321
 
 ###常用指令
 
@@ -120,3 +124,4 @@ git branch test(任意寫)
 
 
 
+https://github.com/jerrytw0923/html-demo
