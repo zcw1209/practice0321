@@ -6,7 +6,7 @@
     <title>我愛健身網站</title>
 <!--影響整個網頁-->
     <style>
-        h2{
+        .title{
             color: blueviolet;
             font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
             background-color: bisque;
@@ -14,10 +14,44 @@
             font-size: 2rem;
             display: inline-block;
             width: 600px;
+            margin: 10px 20px; /*上右下左*/ /*上下 左右*/
+            padding: 6px;
+            border: 1px solid red; /*dotted*/
+            border-radius: 6px;
         }
         body{
             background-color: rgb(247, 246, 207);
             font-family: "標楷體", Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        }
+        .main-title{
+            background-color: rgb(241, 153, 153);
+            color: rgb(84, 84, 240);
+            font-family: '標楷體','Times New Roman', Times, serif;
+            font-size: 4rem;
+            padding: 5px;
+            display: inline;
+            border: none;
+            margin-left: 0px;
+            /* margin-left: 250px; */
+        }
+        /*# => id*/
+        #table-bmi{
+            background-color: azure;
+            width: 100%;
+            height: 300px;
+        }
+        /* thead tbody tr td */
+        thead{
+            background-color: brown;
+        }
+        tbody{
+            background-color: rgb(195, 162, 226);
+        }
+        tr{
+            color: white;
+        }
+        thead tr{
+            color: black;
         }
 
     </style>
@@ -29,7 +63,7 @@
     <img width="100%" src="https://img.freepik.com/free-vector/fitness-gym-training-twitch-banner_23-2150681508.jpg?t=st=1742559566~exp=1742563166~hmac=9a8dfeef487474ff6b4939df0d78e3ada43d0812121fa8d78db6867dc2412b45&w=900" alt="">
 
     </a>
-    <h1 style="color: deepskyblue;background-color: rgb(177, 243, 243);">我愛健身網站</h1>
+    <div class="main-title title">我愛健身網站</div>
     <h3>何謂健身?</h3>
     <h3>健身，英文稱為workout，健身這兩個字拆開來的意思就是健康身體，通過各種運動方式或方法來增強力量、增加肌肉量、柔韌性、耐力，以及提高協調和控制身體各部分的能力來使我們的身體更強健。</h3>
     <p>除了塑造好身材，透過健身可以刺激我們身體的肌肉，再搭配飲食的控制，這能大大幫助我們的肌肉量增加，以及讓我們的肌肉更加的結實。</p>
@@ -41,7 +75,7 @@
 
     <hr>
 
-    <h2 style="background-color: aliceblue;color: blueviolet;">健身的10個好處</h2>
+    <div class="title">健身的10個好處</div>
     <ol type="i">
         <li>增加基礎代謝率</li>
         <li>預防疾病和提高免疫力</li>
@@ -56,7 +90,7 @@
     </ol>
     <hr>
 
-    <h2>好文章連結</h2>
+    <div class="title">好文章連結</div>
 
     <h3>健身初學者必看！10個常見的健身迷思</h3>
 
@@ -69,8 +103,8 @@
     <li><a target="_blank" href="https://www.peeta.tw/weight-loss/weight-loss-tips/">瘦身時搞錯幾件事情，想瘦也瘦不下來</a></li>
     
     <hr>
-    <h2>一天所需卡路里</h2>
-    <table border="5">
+    <div class="title">一天所需卡路里</div>
+    <table id="table-bmi" border="5">
         <thead>
             <tr>
                 <th>每天活動量</th>
@@ -88,7 +122,7 @@
             </tr>
             <tr>
                 <td>中度工作</td>
-                <td>40大卡 X 目前體重（公斤</td>
+                <td>40大卡 X 目前體重（公斤）</td>
                 <td>35大卡 X 目前體重（公斤）</td>
                 <td>30大卡 X 目前體重（公斤）</td>
             </tr>
@@ -109,7 +143,7 @@
         &nbsp;因他的工作為坐辦公室，屬輕量工作，每天攝取熱量應在1300至1625大卡之間(=20~25大卡*65公斤)。</p>
 
     <hr>
-    <h2>健身圖片</h2>
+    <div class="title">健身圖片</div>
     <!-- <table>
         <tr>
             <td></td>
@@ -117,14 +151,16 @@
             <td></td>
         </tr>
     </table> -->
+    <div>
     <img width="32%" src="images/pic-1.jpg" alt="pic-1.jpg">
     <img width="32%" src="images/pic-2.jpg" alt="pic-2.jpg">
     <img width="32%" src="images/pic-3.jpg" alt="pic-3.jpg">
+    </div>
 
     <!--老師是直接width="32%"，然後不加table-->
 
     <hr>
-    <h2>健身影片</h2>
+    <div class="title">健身影片</div>
     <!--ctrl + /-->
     <!-- <video controls src="video/SampleVideo_720x480_5mb.mp4"></video> -->
     <iframe width="45%" height="360" src="https://www.youtube.com/embed/L1BTJsDAWjo" title="7 分鐘居家徒手腹肌訓練【初級版】無裝備｜7 Min Standing Abs workout｜非常適合初學者入門也有效加强核心的訓練｜男生和女生都適合的健身訓練【健身運動】" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
