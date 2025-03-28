@@ -93,6 +93,13 @@ git branch test(任意寫)
 24.加入暫存區的恢復 (A -> U)
 - git restore --staged <filename>
 
+25.將雲端版本同步本地端
+- git pull
+
+26.合併commit
+- git add .
+- git commit --amend
+
 ###常用指令
 
 1.git init
