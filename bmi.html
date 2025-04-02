@@ -13,7 +13,7 @@
 
         form {
             width: 40%;
-            background-color: rgb(121, 98, 143);
+            background-color: rgb(194, 180, 207);
             margin: 24px auto;
             padding: 24px;
             border-radius: 12px;
@@ -32,7 +32,7 @@
         }
 
         .panel1 {
-            background-color: rgb(128, 55, 55);
+            background-color: rgb(184, 123, 123);
             padding: 6px;
             border: 2px dotted pink;
             margin: 6px;
@@ -47,7 +47,7 @@
             margin-top: 1rem;
             width: 80px;
             height: 30px;
-            background-color: rgb(24, 97, 71);
+            background-color: rgb(56, 94, 80);
             border: none;
             font-size: 20px;
             border-radius: 6px;
@@ -69,6 +69,27 @@
 
         a:hover {
             color: orange;
+        }
+
+        @media screen and (max-width:1024px) {
+            form {
+                width: 60%;
+            }
+        }
+
+        @media screen and (max-width:600px) {
+            form {
+                width: 80%;
+            }
+
+            .main-title {
+                background-color: transparent;
+                color: black;
+            }
+
+            label {
+                font-size: 12px;
+            }
         }
     </style>
 </head>
