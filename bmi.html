@@ -138,28 +138,70 @@
         let x = 10;
         let y = 20;
         let z = x + y;
-        console.log(x, y, z);
 
-        const pi = 3.1415926;
-        // pi = 5.555;
-        // prompt輸入;
-        let radius = prompt("請輸入半徑:");
+        //判斷式
+        if (x > 10) {
 
-        //判斷是否數值
-        if (isNaN(radius)) {
-            alert("請輸入正確數值！");
+        } else if (y > 20) {
+
         } else {
-            console.log(isNaN(radius));
-
-            let area = radius * radius * pi;
-            const result = "半徑為:" + radius + " 面積為:" + area
-            //三種輸出
-            console.log(result);
-
-            // document.write(result);
-            document.write("<h2>" + result);
-            alert(result);
+            console.log(x, y);
         }
+
+        //and or not
+        x = "10";
+        y = 10;
+
+        //型態跟數值都要相同
+        console.log(x === y);
+
+        //and ==> && or ==> | not ==>!
+        if (x >= 10 || y >= 30) {
+            console.log("1");
+        }
+
+        let a = false;
+        if (!a) {
+            console.log(a);
+        }
+        let height = prompt("請輸入身高:");
+        let weight = prompt("請輸入體重:");
+        let bmi = getBmi(height, weight);
+
+        alert("BMI:" + bmi);
+
+        //to.fixed用法
+
+        function getBmi(height, weight) {
+            const bmi = weight / (height / 100) ** 2;
+            console.log(bmi.toFixed(2));
+
+            return bmi.toFixed(2);
+        }
+
+
+        // console.log(x, y, z);
+
+        // const pi = 3.1415926;
+        // // pi = 5.555;
+        // // prompt輸入;
+        // let radius = prompt("請輸入半徑:");
+
+        // //判斷是否數值
+        // if (isNaN(radius)) {
+        //     alert("請輸入正確數值！");
+        // } else {
+        //     console.log(isNaN(radius));
+
+        //     let area = radius * radius * pi;
+        //     const result = "半徑為:" + radius + " 面積為:" + area
+        //     //三種輸出
+        //     console.log(result);
+
+        //     // document.write(result);
+        //     document.write("<h2>" + result);
+        //     alert(result);
+        // }
 
 
 
