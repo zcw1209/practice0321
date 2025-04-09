@@ -100,6 +100,16 @@ git branch test(任意寫)
 - git add .
 - git commit --amend
 
+--------------拉取雲端分支
+27.觀察雲端分支
+- git branch -r
+
+28.fetch 拉取缺少分支
+- git fetch
+
+29.同步缺少分支
+-git checkout -b test origin/test
+
 ###常用指令
 
 1.git init
