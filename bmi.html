@@ -111,8 +111,8 @@
 
         <!-- name設為一樣，只能2擇1 -->
         <div class="panel1">
-            <input type="radio" name="sex" id="male" checked>男
-            <input type="radio" name="sex" id="female">女
+            <input type="radio" name="sex" id="male">男
+            <input type="radio" name="sex" id="female" checked>女
 
             <label for="county">居住縣市</label>
             <select name="county" id="county">
@@ -129,79 +129,49 @@
         <input type="file" name="" id=""> -->
 
         <!-- <br> -->
-        <button type="submit">計算</button>
+        <button type="button" onclick="calc()">計算</button>
 
     </form>
+    <div id="result">
+
+    </div>
+
     <a href="index.html">首頁</a>
 
     <script>
-        let x = 10;
-        let y = 20;
-        let z = x + y;
+        const nameEl = document.querySelector("#username");
+        const ageEl = document.querySelector("#age");
+        const heightEl = document.querySelector("#height");
+        const weightEl = document.querySelector("#weight");
+        const countyEl = document.querySelector("#county");
+        const sexEl = document.querySelector("input[name='sex']:checked");
 
-        //判斷式
-        if (x > 10) {
+        console.log(sexEl, countyEl.value, nameEl, ageEl, heightEl, weightEl, heightEl.value, weightEl.value);
 
-        } else if (y > 20) {
 
-        } else {
-            console.log(x, y);
+        function calc() {
+            let height = heightEl.value;
+            let weight = weightEl.value;
+            let bmi = getBmi(height, weight);
+
+            console.log(bmi);
+            // document.querySelector("#result").innerHTML = "<h1>BMI:" + bmi + "</h1>";
+            document.querySelector("#result").innerHTML = `<h1>BMI:${bmi}</h1>`;
+
         }
 
-        //and or not
-        x = "10";
-        y = 10;
 
-        //型態跟數值都要相同
-        console.log(x === y);
 
-        //and ==> && or ==> | not ==>!
-        if (x >= 10 || y >= 30) {
-            console.log("1");
-        }
-
-        let a = false;
-        if (!a) {
-            console.log(a);
-        }
-        let height = prompt("請輸入身高:");
-        let weight = prompt("請輸入體重:");
-        let bmi = getBmi(height, weight);
-
-        alert("BMI:" + bmi);
-
-        //to.fixed用法
-
+        //函式宣告
         function getBmi(height, weight) {
             const bmi = weight / (height / 100) ** 2;
-            console.log(bmi.toFixed(2));
+            // console.log(bmi.toFixed(2));
 
             return bmi.toFixed(2);
         }
 
 
-        // console.log(x, y, z);
 
-        // const pi = 3.1415926;
-        // // pi = 5.555;
-        // // prompt輸入;
-        // let radius = prompt("請輸入半徑:");
-
-        // //判斷是否數值
-        // if (isNaN(radius)) {
-        //     alert("請輸入正確數值！");
-        // } else {
-        //     console.log(isNaN(radius));
-
-        //     let area = radius * radius * pi;
-        //     const result = "半徑為:" + radius + " 面積為:" + area
-        //     //三種輸出
-        //     console.log(result);
-
-        //     // document.write(result);
-        //     document.write("<h2>" + result);
-        //     alert(result);
-        // }
 
 
 
