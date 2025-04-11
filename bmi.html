@@ -249,10 +249,9 @@
         }
 
         function renderTable(datas) {
-
+            tableData = "";
             for (let i = 0; i < datas.length; i++) {
-                tableData = "";
-                // console.log(`${i + 1}:`, datas[i]);
+
                 console.log(i + 1, datas[i]);
                 tableData += addRow(datas[i]);
 
@@ -277,8 +276,10 @@
                     ${tableData}
                 </tbody>
             </table>
-            `;
+            `
             console.log(tableHtml);
+
+            document.querySelector("#tableRecord").innerHTML = tableHtml;
 
         }
 
