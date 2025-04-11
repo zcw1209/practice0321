@@ -114,12 +114,18 @@
             label {
                 font-size: 12px;
             }
+
+            #record {
+                font-size: 32px;
+                margin-top: 24px;
+            }
         }
     </style>
 </head>
 
 <body>
     <div class="main-title">BMI計算機</div>
+
     <div id="record">
 
     </div>
@@ -159,6 +165,7 @@
 
         <!-- <br> -->
         <button type="button" onclick="calc()">計算</button>
+        <button type="button" id="deleteRecordBtn">刪除</button>
         <a href="index.html">首頁</a>
     </form>
     <!--將使用者的名字跟年齡/性別/縣市一行輸出 -->
@@ -185,13 +192,37 @@
         const heightEl = document.querySelector("#height");
         const weightEl = document.querySelector("#weight");
         const countyEl = document.querySelector("#county");
+        const deleteRecordBtnEl = document.querySelector("#deleteRecordBtn");
         // const sexEl = document.querySelector("input[name='sex']:checked");
+
+        console.log(deleteRecordBtnEl);
+
+        deleteRecordBtnEl.addEventListener("click", function () {
+            localStorage.removeItem("record");
+            //刷新頁面
+            // window.location.href = "";
+            //清除資料
+            document.querySelector("#record").innerHTML = "";
+        });
+
 
         //物件
         let data = {
             total: 0,
             count: 0
         }
+
+        record = JSON.parse(localStorage.getItem("record"));
+        if (record) {
+            data = record;
+            //加入顯示紀錄動作
+            let avg = (data.total / data.count).toFixed(1);
+            document.querySelector("#record").innerHTML = `紀錄人數:${data.count} 平均BMI:${avg}`;
+
+        }
+
+        console.log(data);
+
 
         // console.log(sexEl.value, countyEl.value, nameEl, ageEl, heightEl, weightEl, heightEl.value, weightEl.value);
 
@@ -238,6 +269,10 @@
             console.log(data);
             let avg = (data.total / data.count).toFixed(1);
             document.querySelector("#record").innerHTML = `紀錄人數:${data.count} 平均BMI:${avg}`;
+
+            //本地網頁儲存(物件轉換成字串JSON.stringify)
+            localStorage.setItem("record", JSON.stringify(data));
+            // localStorage.setItem("bmi", bmi);
 
         }
 
