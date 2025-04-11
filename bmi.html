@@ -6,129 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BMI計算機</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/bmi.css">
     <style>
-        .main-title {
-            color: rgb(75, 50, 5);
-        }
 
-        form {
-            position: relative;
-            width: 40%;
-            background-color: rgb(194, 180, 207);
-            margin: 24px auto;
-            padding: 24px;
-            border-radius: 12px;
-            box-shadow: 10px 10px 5px rgb(61, 69, 71, 0.8);
-        }
-
-        input {
-            margin: 6px 0px;
-            font-size: 20px;
-            text-align: center;
-            border-radius: 6px;
-        }
-
-        label {
-            font-size: 20px;
-        }
-
-        .panel1 {
-            background-color: rgb(184, 123, 123);
-            padding: 6px;
-            border: 2px dotted pink;
-            margin: 6px;
-            font-size: 20px;
-        }
-
-        select {
-            font-size: 20px;
-        }
-
-        button {
-            margin-top: 1rem;
-            width: 80px;
-            height: 30px;
-            background-color: rgb(56, 94, 80);
-            border: none;
-            font-size: 20px;
-            border-radius: 6px;
-            color: white;
-        }
-
-        button:hover {
-            background-color: brown;
-            cursor: pointer;
-        }
-
-        a {
-            position: absolute;
-            background-color: rgb(148, 148, 187);
-            color: white;
-            padding: 12px;
-            border-radius: 6px;
-            text-decoration: none;
-            right: 10px;
-            bottom: 12px;
-        }
-
-        a:hover {
-            color: orange;
-        }
-
-        #info {
-            background-color: rgb(240, 217, 174);
-        }
-
-        .comment {
-            font-size: 1.5rem;
-            font-weight: 200;
-            background-color: orange;
-        }
-
-        #result {
-            font-size: 2rem;
-            font-weight: bold;
-            background-color: azure;
-            width: 600px;
-            margin: 24px auto;
-            padding: 12px;
-            border: 1px dotted darkblue;
-        }
-
-        table {
-            background-color: rgb(220, 255, 243);
-            margin: 0 auto;
-            width: 600px;
-            font-family: 'Courier New', Courier, monospace;
-            border-collapse: collapse;
-        }
-
-        @media screen and (max-width:1024px) {
-            form {
-                width: 60%;
-            }
-        }
-
-        @media screen and (max-width:600px) {
-            form {
-                width: 80%;
-            }
-
-            .main-title {
-                background-color: transparent;
-                color: black;
-            }
-
-            label {
-                font-size: 12px;
-            }
-
-            #record {
-                font-size: 32px;
-                margin-top: 24px;
-            }
-        }
     </style>
+    <script src="js/bmi.js"></script>
 </head>
 
 <body>
@@ -376,33 +258,6 @@
 
         }
 
-        function getComment(bmi) {
-            let comment, color;
-            if (bmi < 18.5) {
-                comment = "「體重過輕」，需要多運動，均衡飲食，以增加體能，維持健康！";
-                color = "cyan";
-            } else if (bmi < 24) {
-                comment = "恭喜！「健康體重」，要繼續保持！";
-                color = "green";
-            } else if (bmi < 27) {
-                comment = "「體重過重」了，要小心囉，趕快力行「健康體重管理」！";
-                color = "orange";
-            } else {
-                comment = "啊～「肥胖」，需要立刻力行「健康體重管理」囉！";
-                color = "red";
-            }
-            return [comment, color];
-        }
-
-
-
-        //函式宣告
-        function getBmi(height, weight) {
-            const bmi = weight / (height / 100) ** 2;
-            // console.log(bmi.toFixed(2));
-
-            return bmi.toFixed(2);
-        }
 
 
 
