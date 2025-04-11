@@ -91,6 +91,11 @@
         console.log(deleteRecordBtnEl);
 
         deleteRecordBtnEl.addEventListener("click", function () {
+
+            if (!confirm("是否確定刪除!")) {
+                return;
+            }
+
             localStorage.removeItem("record");
             localStorage.removeItem("datas");
             //刷新頁面
