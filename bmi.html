@@ -95,6 +95,14 @@
             border: 1px dotted darkblue;
         }
 
+        table {
+            background-color: rgb(220, 255, 243);
+            margin: 0 auto;
+            width: 600px;
+            font-family: 'Courier New', Courier, monospace;
+            border-collapse: collapse;
+        }
+
         @media screen and (max-width:1024px) {
             form {
                 width: 60%;
@@ -202,12 +210,15 @@
 
         deleteRecordBtnEl.addEventListener("click", function () {
             localStorage.removeItem("record");
+            localStorage.removeItem("datas");
             //刷新頁面
             // window.location.href = "";
             //清除資料
             data.total = 0;
             data.count = 0;
+            datas = [];
             document.querySelector("#record").innerHTML = "";
+            document.querySelector("#tableRecord").innerHTML = "";
         });
 
 
@@ -232,6 +243,11 @@
             document.querySelector("#record").innerHTML = `紀錄人數:${data.count} 平均BMI:${avg}`;
 
         }
+
+        if (datas.length > 0) {
+            renderTable(datas);
+        }
+
 
         function addRow(data) {
             return `
