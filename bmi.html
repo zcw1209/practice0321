@@ -214,6 +214,9 @@
             count: 0
         }
 
+        //陣列
+        let datas = [];
+
         record = JSON.parse(localStorage.getItem("record"));
         if (record) {
             data = record;
@@ -230,8 +233,14 @@
 
 
         function calc() {
+            const sexEl = document.querySelector("input[name='sex']:checked");
+
             let height = heightEl.value;
             let weight = weightEl.value;
+            let name = nameEl.value;
+            let age = ageEl.value;
+            let sex = sexEl.value;
+            let county = countyEl.value;
 
             //判斷height 跟weight要大於0跟是數值 not isNan
             //and ==> && or ==> ||
@@ -243,7 +252,7 @@
             //取消隱藏
             document.querySelector("#result").hidden = false;
 
-            const sexEl = document.querySelector("input[name='sex']:checked");
+
             let userInfo = `${nameEl.value} 年齡:${ageEl.value} 性別:${sexEl.value} 縣市:${countyEl.value}`;
             console.log(userInfo);
             document.querySelector("#info").innerHTML = `<h2>${userInfo}</h2>`
@@ -275,6 +284,25 @@
             //本地網頁儲存(物件轉換成字串JSON.stringify)
             localStorage.setItem("record", JSON.stringify(data));
             // localStorage.setItem("bmi", bmi);
+
+
+
+            //儲存單筆資料
+            let person = {
+                name: name,
+                age: age,
+                sex: sex,
+                county: county,
+                height: height,
+                weight: weight,
+                bmi: bmi
+            }
+
+            datas.push(person);
+            console.log(datas);
+
+            //儲存datas
+            localStorage.setItem("person", JSON.stringify(datas));
 
         }
 
