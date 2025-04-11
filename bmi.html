@@ -181,9 +181,24 @@
         <p class="comment">
             正常!
         </p>
-
     </div>
 
+    <div id="tableRecord">
+        <table>
+            <thead>
+                <tr>
+                    <th>姓名</th>
+                    <th>縣市</th>
+                    <th>年齡</th>
+                    <th>性別</th>
+                    <th>身高</th>
+                    <th>體重</th>
+                    <th>BMI</th>
+                </tr>
+            </thead>
+        </table>
+
+    </div>
 
 
     <script>
@@ -215,7 +230,11 @@
         }
 
         //陣列
-        let datas = [];
+        let datas = JSON.parse(localStorage.getItem("datas")) || [];
+
+        //將字串轉成物件
+        record = JSON.parse(localStorage.getItem("record"));
+
 
         record = JSON.parse(localStorage.getItem("record"));
         if (record) {
@@ -302,7 +321,7 @@
             console.log(datas);
 
             //儲存datas
-            localStorage.setItem("person", JSON.stringify(datas));
+            localStorage.setItem("datas", JSON.stringify(datas));
 
         }
 
