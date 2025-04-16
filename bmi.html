@@ -56,6 +56,8 @@
         <!-- <br> -->
         <button type="button" onclick="calc()">計算</button>
         <button type="button" id="deleteRecordBtn">刪除</button>
+
+        <button type="button" style="background-color: antiquewhite;" onclick="save()">儲存</button>
         <a href="index.html">首頁</a>
     </form>
     <!--將使用者的名字跟年齡/性別/縣市一行輸出 -->
@@ -86,9 +88,43 @@
         const weightEl = document.querySelector("#weight");
         const countyEl = document.querySelector("#county");
         const deleteRecordBtnEl = document.querySelector("#deleteRecordBtn");
+
+        function save() {
+            //產生一個超連結，儲存成JSON格式
+            let datas = JSON.parse(localStorage.getItem("datas"));
+            console.log(datas);
+
+            if (datas == null || datas.length == 0) {
+                alert("目前無紀錄");
+                return;
+            }
+
+            //儲存JSON格式
+            let jsonStr = JSON.stringify(datas)
+            console.log(jsonStr);
+
+            //產生二進制物件
+            const blobData = new Blob([jsonStr], { type: "application/json" });
+            console.log(blobData);
+            const url = URL.createObjectURL(blobData);
+            console.log(url);
+
+
+            //產生一個超連結
+            const a = document.createElement("a");
+            a.href = url;
+            a.download = "records.json";
+            document.body.appendChild(a);
+            a.click();
+            document.body.replaceChild(a);
+            URL.revokeObjectURL(url);
+
+
+        }
+
         // const sexEl = document.querySelector("input[name='sex']:checked");
 
-        console.log(deleteRecordBtnEl);
+        // console.log(deleteRecordBtnEl);
 
         deleteRecordBtnEl.addEventListener("click", function () {
 
